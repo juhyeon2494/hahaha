@@ -1,0 +1,18 @@
+public class kjh {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("몇단 볼래?");
+		int 몇단 = sc.nextInt();
+		
+		System.out.println("몇까지 곱할래?");
+		int 곱할수 = sc.nextInt();
+		
+		int i = 1;
+		for (i=1; i<= 곱할수; i++) {
+			System.out.println(몇단+"*"+i+"="+(몇단*i));
+		}
+	}
+  //for 구구단
