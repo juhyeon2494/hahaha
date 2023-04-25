@@ -1,0 +1,18 @@
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("몇단 보고 싶은데?");
+		
+				
+		int 몇단 = sc.nextInt();
+
+		System.out.println("몇까지 곱하고싶니");
+		
+		
+		int d = sc.nextInt();
+		
+		for (int 곱=1; 곱<=d; 곱++) {
+			System.out.println(몇단+"*"+곱+"="+(몇단*곱));
+		}
+	}
+}
