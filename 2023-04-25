@@ -1,0 +1,19 @@
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("몇단 보고 싶은데?");
+		
+		int 몇단 = sc.nextInt();
+		int 곱 = 1;
+		
+		System.out.println();
+		
+		while (곱 <= 9) {
+			System.out.println(몇단 + " * " +곱+ " = " +(몇단*곱));
+			곱++;
+		
+		}
+	}
+
+}
+//구구단
