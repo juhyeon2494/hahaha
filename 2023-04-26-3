@@ -21,3 +21,4 @@ public static void main(String[] args) {
 	System.out.println(섬);
 	}
 }
+//1부터 저장한 수까지 계속 더하기
