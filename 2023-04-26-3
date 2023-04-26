@@ -1,0 +1,23 @@
+public class kjh {
+
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("숫자를 입력");
+	
+	int num = sc.nextInt();
+	int 섬 = 0;
+	int 임시 = 0;
+	
+	while(true) {
+		System.out.print("현재 숫자:"+임시+" ");
+		섬 = 섬 + 임시;
+		System.out.println("현재 합계;"+섬);
+		임시++;
+		if(임시 > num) {
+			System.out.println("끝났다");
+			break;
+			}
+		}
+	System.out.println(섬);
+	}
+}
