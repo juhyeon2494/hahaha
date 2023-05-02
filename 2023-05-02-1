@@ -1,0 +1,19 @@
+public class kjhkjh {
+
+	public static void main(String[] args) {
+		
+		int []배열 = new int[5];
+		int i = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		while(i <5) {
+			System.out.println("값을 입력하세요!");
+			배열[i] = sc.nextInt();
+			i++;
+		}
+		for(int a = 0; a < 5; a++) {
+			System.out.println(배열[a]);
+		}
+	}
+}
+//배열 선언하고 생성하고 출력하기
