@@ -1,0 +1,22 @@
+m10
+m50
+m100
+m500
+m1000
+
+print("안녕하세요 준화이70 입니다.")
+
+dict = {"콜라" : 1700,"사이다" : 1600,"에비앙" : 2210 }
+
+print ("메뉴",dict.keys())
+print ("가격",dict.values())
+
+money = int(input("돈을 투입해주세요."))
+
+menu = input("구매할 메뉴 입력해주세요.")
+num = int(input("구매할 수량을 입력해주세요."))
+
+if(menu == "콜라") : 
+  result =  money - (1700 * num)
+ if (result // 1000 != 0) :
+ #조별과제(자판기 만들기)
