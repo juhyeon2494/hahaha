@@ -1,0 +1,12 @@
+public class kjhkjh {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		for(int 아이=1;아이<=9;아이++) {
+			for(int 제이=1;제이<=9;제이++) {
+				System.out.println(아이+"*"+제이+"="+아이*제이);
+			}
+			System.out.println();
+		}
+	}
+}
