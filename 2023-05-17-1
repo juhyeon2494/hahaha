@@ -1,0 +1,16 @@
+public class kjhkjh {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("원하는 숫자 입력");
+		int 숫자 = sc.nextInt();
+		int 결과 = 0;
+		for(int 아이=1;아이 <= 숫자; 아이++) {
+			if(아이%2 == 0) {
+				System.out.println("+"+아이);
+				결과=결과+아이;
+			}
+			System.out.println("결과: "+결과);
+		}
+	}
+}
