@@ -1,0 +1,36 @@
+public class kjh {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Random rd = new Random();
+		
+		int 김 = rd.nextInt(9)+1;
+		int 주 = rd.nextInt(9)+1;
+		int 현 = rd.nextInt(9)+1;
+		
+		while(김==주||주==현||현==김) {
+			김 = rd.nextInt(9)+1;
+			주 = rd.nextInt(9)+1;
+			현 = rd.nextInt(9)+1;
+		}
+		System.out.println("숫자 3개만 입력해봐");
+		int kjh = sc.nextInt();
+		
+		if(kjh>999) {
+			System.out.println("다시 ㄱㄱ");
+		}else {
+			int k = kjh % 10;
+			kjh = kjh / 10;
+			int j = kjh % 10;
+			kjh = kjh / 10;
+			int h = kjh % 10;
+			
+			int s = 0;
+			int b = 0;
+			
+			if(김==k) s++;
+			if(주==j) s++;
+			if(현==h) s++;
+		}
+	}
+}
