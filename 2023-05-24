@@ -1,0 +1,55 @@
+package kjh
+import java.util.Random;
+import java.util.Scanner;
+
+public class Baseball {
+    public static void main(String[] args) {
+        Random rd = new Random();
+       
+        int 김  rd.nextInt(9)+1;
+        int 주 = rd.nextInt(9)+1;
+        int 현 = rd.nextInt(9)+1;
+       
+        while(김==주||주==현||현==김) {
+            김 = rd.nextInt(9)+1;
+            주 = rd.nextInt(9)+1;
+            현 = rd.nextInt(9)+1;
+        }
+       
+        Scanner sc = new Scanner(System.in);
+        int s = 0;
+        int b = 0;
+        int kjh
+       
+        while(s!=3) {
+            System.out.print("숫자 3개 입력해봐");
+            jyt = sc.nextInt();
+           
+            if(kjh9) {
+                System.out.println("다시해");
+            } else {
+                int h= jyt % 10; // 3
+                jyt = jyt / 10; // 12
+                int j= jyt % 10; // 2
+                jyt = jyt / 10; // 1
+                int k= jyt % 10; // 1
+               
+                s = 0;
+                b = 0;
+               
+                if(김==j) s++;
+                if(주==y) s++;
+                if(현==t) s++;
+               
+                if(j==주 || j==현) b++;
+                if(y==김 || y==현) b++;
+                if(t==주 || t==현) b++;    
+            }
+            System.out.println(s+" Strike  "+b+" Ball!");
+        }
+        System.out.println("축하합니다 삼진아웃!!!");
+     
+       
+       
+    }
+}
