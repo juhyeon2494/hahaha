@@ -1,0 +1,48 @@
+public class kjhkjh {
+
+
+	    public static void main(String[] args) {
+	        // 컴터가 숫자 3개를 결정
+	        Random rd = new Random();
+	        Scanner sc = new Scanner(System.in);
+	        int[] 김주현 = new int[3];
+	        
+	        김주현[0] = rd.nextInt();
+	        김주현[1] = rd.nextInt();
+	        김주현[2] = rd.nextInt();
+	       
+	        for(int i=0; i<김주현.length;i++) {
+	        	김주현[i] = rd.nextInt(9)+1;
+	        }
+	        
+	        while(김주현[0]==김주현[1]||김주현[1]==김주현[2]||김주현[0]==김주현[2]) {
+	        	for(int i=0; i<김주현.length;i++) {
+		        	김주현[i] = rd.nextInt(9)+1;
+		        }
+	        }
+	        
+	        int s = 0;
+	        int b = 0;
+	        int[] kjh = new int[3];
+	        int num;
+	        s = 0;
+	        b = 0;
+	        while(s!=3) {
+	        	System.out.print("숫자 3개 입력해봐");
+	        	num = sc.nextInt();
+	        	if(num>999) {
+	        		System.out.println("다시해라");
+	        	}else {
+	        		for(int i=김주현.length-1; i>=0;i--) {
+			        	kjh[i] = num % 10;
+			        	num = num / 10;
+	        	}
+	        		if(kjh[0]==김주현[1]||kjh[0]==김주현[2]) b++;
+	        		if(kjh[1]==김주현[0]||kjh[1]==김주현[2]) b++;
+	        		if(kjh[2]==김주현[0]||kjh[2]==김주현[1]) b++;
+	        	}	  
+	        	System.out.println(s+" 스트라이크, "+b+" 볼!! ");
+	        	if(s==3) System.out.println("맞췄네 축하한다");
+	    }      
+	}
+}
