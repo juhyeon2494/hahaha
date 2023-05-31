@@ -1,0 +1,36 @@
+public class kjhkjh {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Random rd = new Random();
+		
+		System.out.println("가로?");
+		int rows = sc.nextInt();
+		
+		System.out.println("세로?");
+		int cols = sc.nextInt();
+		
+		int [][]자리 = new int[rows][cols];
+		
+		for(int i=0; i<자리.length; i++) {
+			for(int j=0; j<자리[rows-1].length; j++) {
+				자리[i][j] = rd.nextInt(rows*cols)+1; 
+				
+				for(int k=0; k<=i;k++) {
+					for(int l=0; l<=cols; l++) {
+						if(i==k&&j==l)
+							continue;
+						else if(자리[i][j] == 자리[k][l])
+							j--;
+					}
+				}
+			}
+		}
+		for(int i=0; i<자리.length; i++) {
+			for(int j=0; j<자리[rows-1].length; j++) {
+				System.out.print(자리[i][j]+"  ");
+			}
+			System.out.println();
+		}
+	}
+}
