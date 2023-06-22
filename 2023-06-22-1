@@ -1,0 +1,29 @@
+package kjh;
+
+public class poketmon {
+
+		static int pno = 0;
+		int level = 1;
+		int hp = 50;
+		int atk = 10;
+		String name;
+		
+		poketmon(){
+			pno++;
+			name = "포켓몬"+pno;
+		}
+		
+		poketmon(String name){
+			pno++;
+			this.name = name;
+		}
+		
+		void 레벨업() {
+			level++;
+			hp+=10;
+			atk+=2;
+		}
+		void 공격() {
+			System.out.println(name+" 이 공격합니다");
+		}
+}
