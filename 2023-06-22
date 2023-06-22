@@ -1,0 +1,16 @@
+package kjh;
+
+import java.util.Scanner;
+
+public class kjh {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		poketmon p1 = new poketmon("주현몬");
+		System.out.println(p1.pno+"+"+p1.name);
+		poketmon p2 = new poketmon("");
+		System.out.println(p2.pno+"+"+p2.name);
+		poketmon p3 = new poketmon("");
+		System.out.println(p3.pno+"+"+p3.name);
+	}
+}
