@@ -1,0 +1,18 @@
+package kjh;
+
+public class kj {
+
+	public static void main(String[] args) {
+		int 짝수 = 0;
+		int 홀수 = 0;
+		for(int i=1; i<1000; i++) {
+			if(i%2==0) {
+				짝수 += i;
+			} else {
+				홀수 += i;
+			}
+		}
+		System.out.println("짝수합:"+짝수);
+		System.out.println("홀수함:"+홀수);
+	}
+}
