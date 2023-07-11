@@ -1,0 +1,30 @@
+package kjh;
+
+import java.util.Scanner;
+
+public class kjhkjh {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		float 키;
+		float 몸무게;
+		float bmi;
+		
+		System.out.println("키?");
+		키 = sc.nextInt();
+		System.out.println("몸무게");
+		몸무게 = sc.nextInt();
+		
+		bmi = 몸무게/(키*키);
+		
+		if(bmi<18.5) {
+			System.out.println("과체중입니다");
+		}else if(bmi<25) {
+			System.out.println("건강");
+		}else if(bmi<30) {
+			System.out.println("과체중");
+		}else {
+			System.out.println("비만");
+		}
+	}
+}
