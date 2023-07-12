@@ -1,0 +1,22 @@
+package kjh;
+
+public class k {
+
+	public static void main(String[] args) {
+		int 박수 = 0;
+		int num ;
+		for(int i=1;i<=40;i++) {
+			num = i;
+			while(true) {
+				if(num % 10 == 3 ||num % 10 == 6 ||num % 10 == 9) {
+					박수 ++;
+			}
+			num = num / 10;
+			if(num ==0) {
+				break;
+				}
+			}
+		}
+		System.out.println(박수);
+	}
+}
