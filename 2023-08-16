@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>0816 방과후</title>
+</head>
+
+<body>
+    <a href="https://www.naver.com">
+        <h1>Lorem Ipsum(로렘 입숨)</h1>
+    </a>
+
+    <div>
+        <h2>What is Lorem Ipsum?</h2>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing<br>
+            and typesetting industry. Lorem Ipsum has been the<br>
+            industry's standard dummy text ever since the 1500s,<br>
+            when an unknown printer took a galley of<br>
+            type and scrambled it to make a type specimen<br>
+            book.
+        </p>
+    </div>
+
+    <div>
+        <h2>Why do we use it?</h2>
+        <p>It is a long established fact that a reader will be<br>
+            distracted by the readable content of a page when<br>
+            looking at its layout. The point of using Lorem Ipsum<br>
+            is that it has a more-or-less normal distribution of<br>
+            letters, as opposed to using 'Content here, content<br>
+            here', making it look like readable English.<br>
+        </p>
+    </div>
+    <div>
+        <h2>소프트웨어개발과</h2>
+        <ul>
+            <li>Java</li>
+            <li>Oracle(DB)</li>
+            <li>Web(html,css,js)</li>
+            <li>Tomcat(Sever)</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>소프트웨어개발과</h2>
+        <ol>
+            <li>Java</li>
+            <li>Oracle(DB)</li>
+            <li>Web(html,css,js)</li>
+            <li>Tomcat(Sever)</li>
+        </ol>
+    </div>
+
+
+
+</body>
+
+</html>
