@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>0817</title>
+</head>
+
+<body>
+    <div>
+        <h2>소제목</h2>
+        <p>
+            동해물과<br>
+            백두산이<br>
+            마르고<br>
+            닳<em>도록</em><br>
+            하느님이 <strong>보우하사</strong><br>
+        </p>
+    </div>
+
+    <div>
+        <h2>오늘 먹을 간식</h2>
+        <ol>
+            <li><a href="https://naver.com" target="_blank" title="네이버">초코파이</a></li>
+            <li>펩시콜라</li>
+            <li>옥수수</li>
+        </ol>
+    </div>
+    <a href="https:naver.com">
+        <img src="민지성.png" alt="민지성" title="민지성 리즈시절" style="width: 500px;">
+    </a>
+
+    <form action="https://github.com">
+        아이디 :<input type="text" name="id">
+        <br>
+        비밀번호 :<input type="password" name="pw">
+        <br>
+        <input type="submit" value="로그인">
+    </form>
+
+</body>
+
+</html>
