@@ -1,0 +1,63 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>민지성♥박준혁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="fontFamliy">
+
+        김주현 <span>Kim juhyeon </span>
+
+    </div>
+
+    <div class="TAL">왼쪽정렬</div>
+    <div class="TAC">가운데정렬</div>
+    <div class="TAR">오른쪽정렬</div>
+</body>
+
+</html>
+
+<!-- CSS -->
+* {
+    font-family: "Georgia", "궁서";
+}
+
+.fontFamliy {
+    font-family: "Georgia", "궁서체";
+    color: pink;
+    font-weight: bold;
+}
+
+.fontFamliy span {
+    color: blue;
+    font-size: 2em;
+}
+
+.TAL {
+    text-align: left;
+    height: 100px;
+    line-height: 100px;
+    background-color: aqua;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.TAC {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    background-color: chartreuse;
+    padding: 10px;
+}
+
+.TAR {
+    text-align: right;
+    height: 100px;
+    line-height: 100px;
+    background-color: crimson;
+}
