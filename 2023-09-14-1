@@ -1,0 +1,82 @@
+<-- HTML !-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>집가고싶다.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <span>오늘은 목요일~</span>
+    <div class="box1">
+        <div class="a">aa</div>
+        <div class="b">bb</div>
+        <div class="c">cc</div>
+    </div>
+    <ul>
+        <li>안녕</li>
+        <li>하세</li>
+        <li>요</li>
+    </ul>
+</body>
+
+</html>
+<-- css !-->
+div {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+}
+
+span {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #4d4dcc22;
+}
+
+.box1 {
+    width: 600px;
+    height: 200px;
+    background-color: aliceblue;
+    border: 2px solid black;
+}
+
+.box1 div {
+    border: 2px solid black;
+    display: inline-block;
+}
+
+.a {
+    position: static;
+    left: 30px;
+    background-color: #4d4dcc88;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.b {
+    position: absolute;
+    top: 400px;
+    left: 300px;
+    background-color: #4d4dcc66;
+}
+
+.c {
+    position: relative;
+    left: 30px;
+    background-color: #4d4dcc44;
+}
+
+li {
+    list-style: none;
+    float: left;
+    margin: 0 10px;
+}
+
+.c:hover {
+    background-color: red;
+}
