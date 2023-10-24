@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num1 = prompt("첫번째 숫자");
+        var num2 = prompt("두번쨰 숫자");
+        var result;
+        result = Number(num1) + Number(num2);
+        document.write(result, "<br>");
+
+        result = num1 - num2;
+        document.write(result, "<br>");
+
+        result = num1 * num2;
+        document.write(result, "<br>");
+
+        result = num1 / num2;
+        document.write(result, "<br>");
+
+        result = num1 % num2;
+        document.write(result, "<br>");
+    </script>
+</body>
+
+</html>
