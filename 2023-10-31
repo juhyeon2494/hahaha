@@ -8,48 +8,60 @@
 
 <body>
     <script>
-        // var 이름 = prompt("이름이 뭐예요?", "홍길동")
+        //<이름 확인>
+        var 이름 = prompt("이름이 뭐예요?", "홍길동")
+        if(이름){
+            document.write("<h2>"+이름+"님 안녕하세요?</h2>");
+        }else{
+            document.write("<h2>새로고침 후 이름을 다시입력해주세요!</h2>");
+        }
 
-        // if(이름){
-        //     document.write("<h2>"+이름+"님 안녕하세요?</h2>");
-        // }else{
-        //     document.write("<h2>새로고침 후 이름을 다시입력해주세요!</h2>");
-        // }
+        //<확인 누르면 확인 취소 누르면 취소 출력>
+        if (confirm("확인하시겠습니까?")) {
+            document.write("<h2>확인</h1>")
+        } else {
+            document.write("<h2>취소</h2>")
+        }
 
+        //<아이디 비밀번호>
+        var id = 'easy1004';
+        var pw = '112233';
+        var user_id = prompt("아이디는?", "");
+        var user_pw = prompt("비밀번호는?", "");
+        if (id == user_id) {
+            if (pw == user_pw) {
+                document.write(user_id + "님 반갑습니다!");
+            } else {
+                alert("비밀번호가 일치하지 않습니다.");
+                location.reload();
+            }
+        } else {
+            alert("아이디가 일치하지 않습니다");
+            location.reload();
+        }
 
-        // if (confirm("확인하시겠습니까?")) {
-        //     document.write("<h2>확인</h1>")
-        // } else {
-        //     document.write("<h2>취소</h2>")
-        // }
+        //<짝수는 파란색 홀수는 빨간색>
+        var i = 20;
+        while (i >= 10) {
+            if (i % 2 == 0) {
+                document.write("<p style='color:blue'>" + i + "</p>");
+            } else {
+                document.write("<p style='color:red'>" + i + "</p>");
+            }
+            i--;
+        }
 
-
-        // var id = 'easy1004';
-        // var pw = '112233';
-        // var user_id = prompt("아이디는?", "");
-        // var user_pw = prompt("비밀번호는?", "");
-        // if (id == user_id) {
-        //     if (pw == user_pw) {
-        //         document.write(user_id + "님 반갑습니다!");
-        //     } else {
-        //         alert("비밀번호가 일치하지 않습니다.");
-        //         location.reload();
-        //     }
-        // } else {
-        //     alert("아이디가 일치하지 않습니다");
-        //     location.reload();
-        // }
-
-        
-        // var i = 20;
-        // while (i >= 10) {
-        //     if (i % 2 == 0) {
-        //         document.write("<p style='color:blue'>" + i + "</p>");
-        //     } else {
-        //         document.write("<p style='color:red'>" + i + "</p>");
-        //     }
-        //     i--;
-        // }
+        //<for문 이용해서 테이블 만들기>
+        var num = 1;
+        document.write("<table border='1'>");
+        for (var j = 0; j < 5; j++) {
+            document.write("<tr>")
+            for (var i = 0; i < 5; i++) {
+                document.write("<th>" + (num++) + "</th>")
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>")
     </script>
 </body>
 
