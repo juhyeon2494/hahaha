@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var kor = 90;
+        var eng = 88;
+        var math = 99;
+        var DB = 100;
+
+        document.write("국어(kor): " + kor + "<br>");
+        document.write("영어(eng): " + eng + "<br>");
+        document.write("수학(math): " + math + "<br>");
+        document.write("데이터베이스(DB): " + DB + "<br>");
+        document.write("평균: " + (kor + eng + math + DB) / 4 + "<br>");
+
+        document.write(`국어(kor): ${kor}<br>`);
+        document.write(`영어(eng): ${eng}<br>`);
+        document.write(`수학(math): ${math}<br>`);
+        document.write(`데이터베이스(DB): ${DB}<br>`);
+        document.write(`평균 : ${(kor + eng + math + DB) / 4}점<br>`);
+
+        document.write(`국어(kor): ${exam2['kor']} <br>`);
+        document.write(`영어(eng): ${exam2.eng} <br>`);
+        document.write(`수학(math): ${exam2["math"]} <br>`);
+        document.write(`데이터베이스(DB): ${exam2.DB} <br>`);
+        document.write(`평균 : ${(exam2["kor"] + exam2["eng"]
+            + exam2["math"] + exam2["DB"])
+
+        let exam = [99, 99, 88, 77];
+
+        for (i = 0; i < exam.length; i++) {
+            document.write(`${i} : ${exam[i]}<br>`);
+        }
+
+        for (let i in exam) {
+            document.write(`${i} : ${exam[i]}<br>`)
+        }
+
+        let exam2 = {
+            "kor": 90,
+            "eng": 100,
+            "math": 99,
+            "DB": 80
+        }
+        for (let i in exam2) {
+            if (i == 'DB') {
+                break;
+            }
+            document.write(`${i} : ${exam2[i]}<br>`);
+        }
+
+        document.write("<h2>구구단 출력하기(1~9단까지)</h2>");
+        for (let i = 1; i < 10; i++) {
+            for (let j = 1; j < 10; j++) {
+                document.write(`${i} * ${j} = ${i * j} `)
+            }
+            document.write('<br>')
+        }
+    </script>
+</body>
+
+</html>
