@@ -55,7 +55,7 @@
 </head>
 
 <body>
-    <h2>DOM 객체(get 매서드)</h2>
+    <h2 style="background-color: red;">DOM 객체(get 매서드)</h2>
     <ul>
         <li>1</li>
         <li>2</li>
@@ -63,13 +63,14 @@
     </ul>
 
     <p id="text">
-        <span style="color: red;">Lorem ipsum</span>
+        <span class="a" style="color: red;">Lorem ipsum</span>
         dolor sit amet consectetur
         adipisicing elit. Quaerat doloremque adipisci
         molestiae perferendis, explicabo sed perspiciatis
         repellat obcaecati unde fugit magnam vitae aliquid
         vero voluptatem sint sapiente molestias nam quibusdam?
     </p>
+
 </body>
 
 </html>
