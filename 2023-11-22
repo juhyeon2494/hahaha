@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>구구단</title>
+</head>
+
+<body>
+    <script>
+        let dan = prompt("몇단?");
+
+
+        for (let i = 1; i <= 9; i++) {
+            document.write(`${dan} * ${i} = ${dan * i} <br>`)
+        }
+    </script>
+</body>
+
+</html>
+<!--------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>표준 내장 객체(Standard Built-in Object)</title>
+</head>
+
+<body>
+    <!-- <script>
+        let a = "안녕하세요";
+
+        alert(a);
+        a.replace("하세요", "하십니까");
+    </script> -->
+
+    <script>
+        let b = 18.124907;
+        document.write(Math.round(b) + "<br>")
+
+        let rd = Math.round(Math.random() * 10);
+        document.write(rd);
+    </script>
+</body>
+
+</html>
+<!--------------------------------------------->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>DOM 객체(get 매서드)</h2>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <p id="text">
+        <span style="color: red;">Lorem ipsum</span>
+        dolor sit amet consectetur
+        adipisicing elit. Quaerat doloremque adipisci
+        molestiae perferendis, explicabo sed perspiciatis
+        repellat obcaecati unde fugit magnam vitae aliquid
+        vero voluptatem sint sapiente molestias nam quibusdam?
+    </p>
+</body>
+
+</html>
