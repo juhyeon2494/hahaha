@@ -1,0 +1,21 @@
+package kjh;
+
+import java.util.Arrays;
+
+public class jj {
+
+	public static void main(String[] args) {
+		int[] arr = new int[] {8, 3, 4, 9, 7}; 
+		
+		for(int i=1; i < arr.length; i++) { // i는 1부터 arr의 길이만큼 +1씩 하면서 반복한다
+			for(int j=i; j > 0; j--) { // j에 i를 넣고 j가 0보다 크면 -1을 한다
+				if(arr[j-1] > arr[j]) { // 만약에 j-1번째의 값이 j번째보다 크면
+					int temp = arr[j-1]; // j-1의 값을 temp에 넣고
+					arr[j-1] = arr[j]; // temp에 넣어서 비어있는 j-1의 공간에 j의 값을 넣고
+					arr[j] = temp; //temp에 들어간 j-1의 값을 j에 넣는다
+				}
+			}
+		}
+		System.out.println(Arrays.toString(arr)); // 최종 결과값을 출력
+	}
+}
