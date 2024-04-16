@@ -1,0 +1,28 @@
+package kjh;
+
+public class asd {
+
+	public static void main(String[] args) {
+		int num = 18;
+		int [] arr = {2,2,2,2,2,2,2,2,2,2};
+		
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = num % 2;
+			num = num / 2;
+			
+			for(int j = 0; j<arr.length; j++) {
+				System.out.print(arr[j]);
+			}
+			System.out.println();
+			
+			if(num == 0) break;
+		}
+		for(int i=arr.length-1; i>=0; i--) {
+			if(arr[i] != 2) {
+				System.out.print(arr[i]);
+			}
+		}
+
+	}
+
+}
