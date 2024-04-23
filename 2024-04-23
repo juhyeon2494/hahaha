@@ -19,8 +19,9 @@ public class kjh {
 				숫자방[i] = 숫자%10;
 				숫자 = 숫자 / 10;
 				System.out.println(숫자);
-				if(숫자방[i] != 0 && 숫자방[i] != 1)
+				if(숫자방[i] != 0 && 숫자방[i] != 1) {
 					진행시켜 = false;
+				}
 			}
 			System.out.println("배열 검사하기");
 			for(int i=0; i<숫자방.length; i++) {
@@ -28,7 +29,18 @@ public class kjh {
 			}
 			if(진행시켜) {
 				System.out.println("값이 정상적으로 등록되었습니다.");
-				
+				int 결과 = 0;
+				int 가중치 = 1;
+				for(int i = 숫자방.length-1; i>=0; i--) {
+					if(숫자방[i] == 1) {
+//						결과 = 결과 + (int)Math.pow(2, (숫자방.length-1)-i);
+						for(int j=0; j<i; j++) {
+							가중치 = 가중치 * 2;
+						}
+						결과 = 결과 + 가중치;
+						System.out.println(결과);
+					}
+				}
 			}
 		}
 	}
