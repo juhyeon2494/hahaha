@@ -1,0 +1,35 @@
+package kjh;
+
+import java.util.Scanner;
+
+public class kjh {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("값 몇개 입력할래?");
+		int num = sc.nextInt();
+		int []arr = new int [num];
+		
+		for(int i = 0; i<arr.length;i++) {
+			System.out.printf("arr[%d]?: ",i);
+			arr[i] = sc.nextInt();
+		}
+		
+		for(int i = 0; i < arr.length; i++) {
+			int min = arr[i];
+			for(int j = i; j < arr.length; j++) {
+				if(min > arr[j]) {
+					min = j;
+				}
+			}
+			int tmp = arr[i];
+			arr[i] = min;
+			arr[min] = tmp;
+		}
+		for(int i = 0; i<arr.length; i++) {
+			System.out.println(arr[i]+"   ");			
+		}
+		
+	}
+
+}
