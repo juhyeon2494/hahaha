@@ -1,0 +1,55 @@
+package kjh;
+
+public class kjh {
+
+	public static void main(String[] args) {
+		String 이름;
+		이름 = "김주현";
+		String 선생님 = new String("김주현");
+		
+		System.out.println(이름 == 선생님);
+		
+		String 주민번호 = "8912071046218";
+		int 성별 = Character.getNumericValue(주민번호.charAt(6));
+		
+		switch (성별) {
+		case 1, 3:
+			System.out.println("남자");
+			break;
+		case 2, 4:
+			System.out.println("여자");
+			break;
+		}
+		String 변수 = "김,주,현";
+		String [] 배열 = 변수.split(",");
+		
+		System.out.println(배열);
+		for(int i = 0; i< 배열.length; i++) {
+			System.out.println(배열[i]);
+		}
+		for(String i: 배열) {
+			System.out.println(i);
+		}
+		Human h1 = new Human();
+		h1.자기소개();
+		h1.키 = 168;
+		h1.몸무게 = 56;
+		h1.이름 = "김주현";
+		
+		h1.자기소개();
+	}
+}
+
+package kjh;
+
+public class Human {
+	// 필드(변수, 속성)
+	int 키;
+	int 몸무게;
+	String 이름;
+	// 메소드(함수, 기능)
+	void 자기소개(){
+		System.out.printf("제 이름은 %s, 키는 %d, "
+				+ "몸무게는 %dkg입니다.\n", 이름, 키, 몸무게);
+	}
+}
