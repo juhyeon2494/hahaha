@@ -1,0 +1,45 @@
+package kjh;
+
+public class Hero {
+	String name = "김주현";
+	int hp = 80;
+	int atk = 10;
+	boolean die = false;
+	
+	int 공격() {
+		System.out.println(name+"이 공격합니다! 얍");
+		return atk;
+	}
+	
+	void 공격당함(int 데미지) {
+		hp = hp - 데미지;
+		
+		if(hp <= 0) {
+			die = true;
+			System.out.println(name+"이 죽었습니다.");
+		}
+	}
+}
+
+package kjh;
+
+public class Monster {
+	String name = "몬스터";
+	int hp = 120;
+	int atk = 30;
+	boolean die = false;
+	
+	int 공격() {
+		System.out.println(name+"이 공격합니다! 캬아악");
+		return atk;
+	}
+	
+	void 공격당함(int 데미지) {
+		hp = hp - 데미지;
+		
+		if(hp <= 0) {
+			die = true;
+			System.out.println(name+"을 처치했습니다.");
+		}
+	}
+}
