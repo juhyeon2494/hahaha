@@ -1,0 +1,160 @@
+<main>
+package _0528;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Game {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Random rd = new Random();
+		Player p1;
+		
+		System.out.println("(1)전사 (2)법사");
+		int 캐릭터선택 = sc.nextInt();
+		if(캐릭터선택==1) {
+			p1 = new Player("전사", 100, 0, 30);
+			
+		}else {
+			p1 = new Player("법사", 50, 30, 10);
+		}
+		Monster m1 = new Monster("몬스터", 100, 20);
+		
+		System.out.println(m1.get이름()+"을 마주쳤다.");
+		while(true) {
+			
+			
+			System.out.println("(1)공격 (2)방어 (3)파이어볼");
+			int 선택지 = sc.nextInt();
+			
+			if(선택지 == 1) {
+				p1.공격(m1);
+			}else if(선택지 == 2) {
+				p1.명상();
+			}else{
+				p1.파이어볼(m1);
+			}
+			int 몬스터행동 = rd.nextInt(10);
+			if(몬스터행동<4) {
+				m1.공격(p1);
+			}else {
+				m1.방어();
+			}
+			if(p1.get체력() <= 0) {
+				System.out.println(p1.get이름()+"이 죽었습니다..");
+				break;
+			}else if(m1.get체력() <= 0) {
+				System.out.println(p1.get이름()+"이 "+m1.get이름()+"을 물리쳤습니다.");
+				break;
+			}
+		}
+	}
+
+}
+
+<Monster>
+package _0528;
+
+public class Monster {
+	String 이름;
+	int 체력;
+	int 공격력;
+	
+	public Monster(String 이름, int 체력, int 공격력) {
+		this.이름 = 이름;
+		this.체력 = 체력;
+		this.공격력 = 공격력;
+	}
+	public String get이름() {
+		return 이름;
+	}
+	public void set이름(String 이름) {
+		this.이름 = 이름;
+	}
+	public int get체력() {
+		return 체력;
+	}
+	public void set체력(int 체력) {
+		this.체력 = 체력;
+	}
+	public int get공격력() {
+		return 공격력;
+	}
+	public void set공격력(int 공격력) {
+		this.공격력 = 공격력;
+	}
+
+	void 공격(Player 나) {
+		System.out.printf("%s가 %s를 공격! 캬아아아악~\n", 이름, 나.이름);
+		나.체력 -= 공격력;
+	}
+	
+	void 방어() {
+		체력 += 10;
+		System.out.printf("%s가 방어하여 체력이 %d가 되었습니다.", 이름, 체력);
+	}
+}
+
+<Player>
+package _0528;
+
+public class Player {
+	String 이름;
+	int 체력;
+	int 마나;
+	int 공격력;
+	public Player(String 이름, int 체력, int 마나, int 공격력) {
+		this.이름 = 이름;
+		this.체력 = 체력;
+		this.마나 = 마나;
+		this.공격력 = 공격력;
+	}
+	public String get이름() {
+		return 이름;
+	}
+	public void set이름(String 이름) {
+		this.이름 = 이름;
+	}
+	public int get체력() {
+		return 체력;
+	}
+	public void set체력(int 체력) {
+		this.체력 = 체력;
+	}
+	public int get마나() {
+		return 마나;
+	}
+	public void set마나(int 마나) {
+		this.마나 = 마나;
+	}
+	public int get공격력() {
+		return 공격력;
+	}
+	public void set공격력(int 공격력) {
+		this.공격력 = 공격력;
+	}
+	
+	
+	
+	void 공격(Monster 적){
+		System.out.printf("%s가 %s를 공격합니다.\n", 이름, 적.이름);
+		적.체력 -= 공격력;
+	}
+	
+	void 명상() {
+		마나 += 10;
+		체력 += 10;
+		System.out.printf("%s가 방어합니다. 현재체력: %d, 마나: %d\n",이름, 체력, 마나);
+	}
+	
+	void 파이어볼(Monster 적) {
+		if(마나 > 30) {
+			System.out.printf("%s가 %s에게 파이어볼 공격! 현재 마나:%d\n",이름, 적.이름, 마나);
+			적.체력 -= 공격력 *2;
+			마나 -= 30;
+		}else {
+			System.out.printf("마나 부족(마나:%d)으로 파이어볼 실패...\n",마나);
+		}
+	}
+}
