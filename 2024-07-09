@@ -1,0 +1,92 @@
+<Student_1>
+package kjh;
+
+public class Student_1 extends Student{
+	
+	protected boolean 영교시;
+	
+	Student_1(int 학번, String 학과, String 이름){
+		super(학번, 학과, 이름);
+		영교시 = true;
+	}
+	
+	@Override
+	protected void 자기소개() {
+		super.자기소개();
+		if(영교시==true)
+		System.out.println("저는 1학년이라서 0교시를 합니다.");
+	}
+	
+	protected void 자격증() {
+		System.out.println("저는 한글, 엑셀, 파포, 컴활을 취득했습니다.");
+	}
+}
+
+<Student_2>
+package kjh;
+
+public class Student_2 extends Student_1{
+
+	Student_2(int 학번, String 학과, String 이름) {
+		super(학번, 학과, 이름);
+		영교시 = false;
+	}
+
+	@Override
+	protected void 자기소개() {
+		super.자기소개();
+		System.out.println("저는 2학년이라서 도제면접을 준비합니다.");
+	}
+	
+	protected void 정산기() {
+		System.out.println("정보처리 산업기사를 준비합니다.");
+	}
+}
+
+<Student_3>
+package kjh;
+
+public class Student_3 extends Student_2{
+	boolean 취업여부;
+	
+	Student_3(int 학번, String 학과, String 이름) {
+		super(학번, 학과, 이름);
+		취업여부 = false;
+	}
+	
+	@Override
+	protected void 자기소개() {
+		super.자기소개();
+		if(취업여부==false) {
+			System.out.println("저는 대학갈래요.");
+		}
+	}
+	protected void 취업() {
+		System.out.println("저 취업했어요!!");
+		취업여부 = true;
+	}
+}
+
+<main>
+package kjh;
+
+public class Main {
+
+	public static void main(String[] args) {
+//		Student 학생 = new Student(21105, "SW개발과", "김주현");
+//		Student_1 학생1 = new Student_1(11111, "SW개발과", "권세준");
+//		Student_2 학생2 = new Student_2(21110, "SW개발과", "최지민");
+//		Student_3 학생3 = new Student_3(31111, "스마트과", "윤장원");
+		
+		Student[] 학생들 = {
+				new Student_1(11111, "SW개발과", "권세준"),
+				new Student_2(21110, "SW개발과", "최지민"),
+				new Student_3(30900, "스마트과", "윤장원")
+				};
+		
+		for(Student i :학생들) {
+			i.자기소개();
+		}
+	}
+
+}
