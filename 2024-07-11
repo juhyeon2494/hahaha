@@ -1,0 +1,265 @@
+<Hero>
+package _0711;
+
+public class Hero {
+	String 이름;
+	int 체력;
+	int 공격력;
+	
+	public Hero(String 이름, int 체력, int 공격력) {
+		this.이름 = 이름;
+		this.체력 = 체력;
+		this.공격력 = 공격력;
+	}
+	
+	public String get이름() {
+		return 이름;
+	}
+	public void set이름(String 이름) {
+		this.이름 = 이름;
+	}
+	public int get체력() {
+		return 체력;
+	}
+	public void set체력(int 체력) {
+		this.체력 = 체력;
+	}
+	public int get공격력() {
+		return 공격력;
+	}
+	public void set공격력(int 공격력) {
+		this.공격력 = 공격력;
+	}
+
+	
+	void 자기소개() {
+		System.out.printf("영웅: %s ,체력: %d ,공격력: %d \n", 이름, 체력, 공격력);
+	}
+	
+	void 공격(Monster 적) {
+		자기소개();
+		적.자기소개();
+		System.out.println("*****************************");
+		System.out.printf("%s -> %s 공격 \n", 이름, 적.get이름());
+		int 데미지 = 적.get체력() - 공격력;
+		적.set체력(데미지);
+		System.out.printf("%s의 체력: %d \n", 적.get이름(), 적.get체력());
+		System.out.println("*****************************");
+		System.out.println();
+	}
+}
+
+<Warrior>
+package _0711;
+
+public class Warrior extends Hero{
+	int 분노;
+	
+	public Warrior(String 이름, int 체력, int 공격력) {
+		super(이름, 체력, 공격력);
+		분노 = 20;
+	}
+
+	public int get분노() {
+		return 분노;
+	}
+	public void set분노(int 분노) {
+		this.분노 = 분노;
+	}
+	
+	@Override
+	void 자기소개() {
+		System.out.printf("전사: %s ,체력: %d ,공격력: %d ,분노: %d \n", 이름, 체력, 공격력, 분노);
+	}
+	
+	@Override
+	void 공격(Monster 적) {
+		super.공격(적);
+		분노 += 20;
+		System.out.printf("분노가 %d이 되었습니다. \n",분노);
+	}
+	
+	void 분노의일격(Monster 적) {
+		if(분노 >= 100) {
+			자기if(분노 >= 100) {
+			자기소개();
+			적.자기소개();
+			System.out.println("♨　♨　♨　♨　♨　♨　♨　♨");
+			System.out.println("　♨　♨　♨　♨　♨　♨　♨　");
+			System.out.printf("%s -> %s 분노의 일격!! \n", 이름, 적.get이름());
+			int 데미지 = 적.get체력() - 공격력*2;
+			적.set체력(데미지);
+			System.out.printf("%s의 체력: %d \n", 적.get이름(), 적.get체력());
+			System.out.println("♨　♨　♨　♨　♨　♨　♨　♨");
+			System.out.println("　♨　♨　♨　♨　♨　♨　♨　");
+			분노 = 0;
+		}else {
+			System.out.println("분노가 부족하여 실패했습니다..");
+		}소개();
+			적.자기소개();
+			System.out.println("♨　♨　♨　♨　♨　♨　♨　♨");
+			System.out.println("　♨　♨　♨　♨　♨　♨　♨　");
+			System.out.printf("%s -> %s 분노의 일격!! \n", 이름, 적.get이름());
+			int 데미지 = 적.get체력() - 공격력*2;
+			적.set체력(데미지);
+			System.out.printf("%s의 체력: %d \n", 적.get이름(), 적.get체력());
+			System.out.println("♨　♨　♨　♨　♨　♨　♨　♨");
+			System.out.println("　♨　♨　♨　♨　♨　♨　♨　");
+			분노 = 0;
+		}else {
+			System.out.println("분노가 부족하여 실패했습니다..");
+		}
+	}
+}
+
+<Mage>
+package _0711;
+
+public class Mage extends Hero{
+	
+	int 마나;
+	
+	public Mage(String 이름, int 체력, int 공격력) {
+		super(이름, 체력, 공격력);
+		마나 = 40;
+	}
+	
+	public int get마나() {
+		return 마나;
+	}
+	public void set마나(int 마나) {
+		this.마나 = 마나;
+	}
+	
+	@Override
+	void 자기소개() {
+		System.out.printf("법사: %s ,체력: %d ,공격력: %d ,마나: %d \n", 이름, 체력, 공격력, 마나);
+		
+	}
+	
+	@Override
+	void 공격(Monster 적) {
+		super.공격(적);
+		마나 += 10;
+		System.out.printf("마나가 %d 되었습니다.\n", 마나);
+	}
+	
+	void 명상() {
+		System.out.println("명상:🙏🙏🙏🙏🙏🙏🙏🙏🙏🙏🙏");
+		마나 += 20;
+		System.out.printf("명상을 사용했습니다. 마나:%s \n", 마나);
+	}
+	
+	void 라이트닝(Monster 적) {
+		if(마나 >= 60) {
+			자기소개();
+			적.자기소개();
+			System.out.println("⚡　⚡　⚡　⚡　⚡　⚡　⚡　⚡");
+			System.out.println("　⚡　⚡　⚡　⚡　⚡　⚡　⚡　");
+			System.out.printf("%s -> %s 라이트닝!! \n", 이름, 적.get이름());
+			int 데미지 = 적.get체력() - 공격력*2;
+			적.set체력(데미지);
+			System.out.printf("%s의 체력: %d \n", 적.get이름(), 적.get체력());
+			System.out.println("⚡　⚡　⚡　⚡　⚡　⚡　⚡　⚡");
+			System.out.println("　⚡　⚡　⚡　⚡　⚡　⚡　⚡　");
+			마나 -= 60;
+		}else {
+			System.out.println("마나가 부족하여 실패했습니다..");
+		}
+	}
+}
+
+<Main>
+package _0711;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Hero [] 히어로 = {
+				new Warrior("주현", 100, 20),
+				new Mage("해람", 100, 20)
+		};
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.printf("직업을 선택하세요 > (1)전사  (2)법사");
+		int 직업선택 = sc.nextInt();
+		Hero 직업;
+		
+		if (직업선택==1) {
+			직업 = 히어로[0];
+		} else {
+			직업 = 히어로[1];			
+		}
+		
+		Ork m1 = new Ork("스랄", 100, 15);
+		
+		m1.자기소개();
+	}
+}
+
+<Ork>
+package _0711;
+
+public class Ork extends Monster{
+	
+	int 분노;
+	
+	public Ork(String 이름, int 체력, int 공격력) {
+		super(이름, 체력, 공격력);
+		분노 = 30;
+	}
+	
+	@Override
+	void 자기소개() {
+		System.out.printf("몬스터: %s ,체력: %d ,공격력: %d 분노: %d \n", 
+				이름, 체력, 공격력, 분노);
+	}
+	
+	@Override
+	void 공격() {
+		System.out.println("공격");
+	}
+	
+}
+
+<Monster>
+package _0711;
+
+public abstract class Monster {
+	String 이름;
+	int 체력;
+	int 공격력;
+	public Monster(String 이름, int 체력, int 공격력) {
+		this.이름 = 이름;
+		this.체력 = 체력;
+		this.공격력 = 공격력;
+	}
+	public String get이름() {
+		return 이름;
+	}
+	public void set이름(String 이름) {
+		this.이름 = 이름;
+	}
+	public int get체력() {
+		return 체력;
+	}
+	public void set체력(int 체력) {
+		this.체력 = 체력;
+	}
+	public int get공격력() {
+		return 공격력;
+	}
+	public void set공격력(int 공격력) {
+		this.공격력 = 공격력;
+	}
+	
+	
+	void 자기소개() {
+		System.out.printf("몬스터: %s ,체력: %d ,공격력: %d \n", 
+							이름, 체력, 공격력);
+	}
+	
+	abstract void 공격();
+}
