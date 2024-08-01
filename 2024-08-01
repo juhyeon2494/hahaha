@@ -1,0 +1,352 @@
+--추상클래스--
+<Hero>
+package kjh;
+
+public abstract class Hero {
+	
+	String 이름;
+	int 체력;
+	int 공격력;
+	boolean 생사여부;
+	String 속성;
+	
+	public Hero(String 이름, int 체력, int 공격력) {
+		this.이름 = 이름;
+		this.체력 = 체력;
+		this.공격력 = 공격력;
+		생사여부 = true;
+	}
+	
+	void 자기소개() {
+		System.out.printf("이름:%s|체력:%d|공격력:%d\n", 이름, 체력, 공격력);
+	}
+	void 죽기() {
+		생사여부 = false;
+		System.out.printf("%s가 전사했다.\n",이름);
+	}
+	
+	abstract void 공격(Monster 적);
+	abstract void 특수공격(Monster 적);
+}
+
+<Monster>
+package kjh;
+
+public abstract class Monster {
+
+	String 이름;
+	int 체력;
+	int 공격력;
+	boolean 생사여부;
+	String 속성;
+	
+	public Monster(String 이름, int 체력, int 공격력) {
+		this.이름 = 이름;
+		this.체력 = 체력;
+		this.공격력 = 공격력;
+		생사여부 = true;
+	}
+	
+	void 자기소개() {
+		System.out.printf("이름:%s|체력:%d|공격력:%d\n", 이름, 체력, 공격력);
+	}
+	
+	void 죽기() {
+		생사여부 = false;
+		System.out.printf("%s가 죽었다.\n",이름);
+	}
+	abstract void 공격(Hero 적);
+}
+
+--클래스--
+<Mage>
+package kjh;
+
+public class Mage extends Hero{
+	int 마나;
+	
+	Mage(String 이름, int 체력, int 공격력) {
+		super(이름, 체력, 공격력);
+		공격력 = 공격력계산();
+		마나 = 30;
+		속성 = "물";
+	}
+	
+	int 공격력계산() {
+		return 공격력+5;
+	}
+	
+	@Override
+	void 자기소개() {
+		super.자기소개();
+		System.out.printf("마나:%d|속성:%s\n",마나, 속성);
+	}
+
+	@Override
+	void 공격(Monster 적) {
+		자기소개();적.자기소개();
+		
+		System.out.printf("%s → %s 공격!\n",이름, 적.이름);
+		적.체력 = 적.체력 - 공격력;
+		마나 = 마나 + 15;
+		
+		자기소개();적.자기소개();
+	}
+
+	@Override
+	void 특수공격(Monster 적) {
+		자기소개();적.자기소개();
+		int 특수공격력;
+		
+		if(마나>=100) {
+			특수공격력 = 공격력*3;
+			마나 = 0;
+		} else {
+			특수공격력 = 공격력;
+		}
+		
+		if(적.속성.equals("불")) {
+			System.out.println("불을 꺼트려 효과가 굉장했다.");
+			System.out.println("★★★★★★★★★★★★★★★★★★★");
+			System.out.printf("%s → %s 특수공격!\n",이름, 적.이름);
+			적.체력 = 적.체력 - (특수공격력*3);
+		} else {
+			System.out.println("특수공격 실패");
+		}
+		
+		자기소개();적.자기소개();
+	}
+}
+
+<Warrior>
+package kjh;
+
+public class Warrior extends Hero{
+
+	int 분노;
+	
+	Warrior(String 이름, int 체력, int 공격력) {
+		super(이름, 체력, 공격력);
+		공격력 = 공격력계산();
+		분노 = 30;
+		속성 = "불";
+	}
+	
+	int 공격력계산() {
+		return 공격력+10;
+	}
+	
+	@Override
+	void 자기소개() {
+		super.자기소개();
+		System.out.printf("분노:%d|속성:%s\n",분노, 속성);
+	}
+
+	@Override
+	void 공격(Monster 적) {
+		자기소개();적.자기소개();
+		
+		System.out.printf("%s → %s 공격!\n",이름, 적.이름);
+		적.체력 = 적.체력 - 공격력;
+		분노 = 분노 + 10;
+		
+		자기소개();적.자기소개();
+	}
+
+	@Override
+	void 특수공격(Monster 적) {
+		자기소개();적.자기소개();
+		int 특수공격력;
+		
+		if(분노>=100) {
+			특수공격력 = 공격력*2;
+			분노 = 0;
+		} else {
+			특수공격력 = 공격력;
+		}
+		
+		if(적.속성.equals("풀")) {
+			System.out.println("풀에 불이 붙어 효과가 굉장했다.");
+			System.out.println("★★★★★★★★★★★★★★★★★★★");
+			System.out.printf("%s → %s 특수공격!\n",이름, 적.이름);
+			적.체력 = 적.체력 - (특수공격력*3);
+		} else {
+			System.out.printf("%s → %s 특수공격!\n",이름, 적.이름);
+			적.체력 = 적.체력 - (특수공격력*2);
+		}
+		
+		자기소개();적.자기소개();
+	}
+
+}
+
+<Ork>
+package kjh;
+
+public class Ork extends Monster{
+
+	int 분노;
+	
+	public Ork(String 이름, int 체력, int 공격력) {
+		super(이름, 체력, 공격력);
+		분노 = 60;
+		속성 = "풀";
+	}
+	
+	@Override
+	void 자기소개() {
+		super.자기소개();
+		System.out.printf("분노:%d|속성:%s \n", 분노, 속성);
+	}
+	
+	void 공격(Hero 적) {
+		
+		자기소개();적.자기소개();
+		
+		분노 += 10;
+		
+		int 특수공격력;
+		if(분노>=100) {
+			System.err.printf("%s가 화났다.\n", 이름);
+			특수공격력 = 공격력*2;
+			분노 = 0;
+		} else {
+			특수공격력 = 공격력;
+		}
+		
+		if(적.속성.equals("물")) {
+			System.err.println("물속성에게 효과가 굉장했다.");
+			System.out.println("★★★★★★★★★★★★★★★★★★★");
+			System.out.printf("%s → %s 특수공격!\n",이름, 적.이름);
+			적.체력 = 적.체력 - (특수공격력*3);
+		} else {
+			System.out.printf("%s → %s 공격!\n",이름, 적.이름);
+			적.체력 = 적.체력 - (특수공격력*2);
+		}
+		
+	}
+	
+}
+
+<Golem>
+package kjh;
+
+public class Golem extends Monster{
+
+	int 기력;
+	
+	public Golem(String 이름, int 체력, int 공격력) {
+		super(이름, 체력, 공격력);
+		기력 = 20;
+		속성 = "땅";
+	}
+	
+	@Override
+	void 자기소개() {
+		super.자기소개();
+		System.out.printf("기력:%d|속성:%s \n", 기력, 속성);
+	}
+	
+	void 공격(Hero 적) {
+		
+		자기소개();적.자기소개();
+		
+		기력 = 기력 + 15;
+		
+		if(기력>=100) {
+			System.err.printf("%s가 체력 회복.\n", 이름);
+			체력 = 100;
+			기력 = 0;
+		
+		if(적.속성.equals("불")) {
+			System.err.println("물속성에게 효과가 굉장했다.");
+			System.out.println("★★★★★★★★★★★★★★★★★★★");
+			System.out.printf("%s → %s 특수공격!\n",이름, 적.이름);
+			적.체력 = 적.체력 - (공격력*3);
+		} else {
+			System.out.printf("%s → %s 공격!\n",이름, 적.이름);
+			적.체력 = 적.체력 - (공격력*2);
+		}
+		
+	}
+	
+	}
+}
+
+--메인--
+<Main>
+package kjh;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Hero [] 히어로들 = new Hero [2];
+		Monster [] 몬스터들 = new Monster [2];
+		
+		히어로들 [0] = new Warrior("불전사", 100, 10);
+		히어로들 [1] = new Mage("물법사", 80, 7);
+		
+		몬스터들 [0] = new Ork("풀오크", 80, 12);
+		몬스터들 [1] = new Golem("땅골렘", 100, 10);
+		
+//		for(Hero h : 히어로들) {
+//			h.자기소개();
+//		}
+		
+		Random rd = new Random();
+		
+		Monster 나타난몬스터 = 몬스터들[rd.nextInt(2)];
+		System.out.printf("%s가 나타났다.\n",나타난몬스터.이름);
+		나타난몬스터.자기소개();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("영웅을 선택하세요. (1)불전사 (2)물법사");
+		int 영웅선택 = sc.nextInt()-1;
+		Hero 영웅 = 히어로들[영웅선택];
+		
+		System.out.printf("%s 영웅 등장.\n", 영웅.이름);
+		영웅.자기소개();
+		
+		System.err.printf("%s와 %s이 전투를 시작.\n",영웅.이름, 나타난몬스터.이름);
+		
+		boolean 진행 = true;
+		
+		while(진행) {
+			System.out.printf("%s의 턴, (1)공격 | (2)특수공격 | (3)도망치기 > ", 영웅.이름);
+			int 행동선택 = sc.nextInt();
+			
+			switch(행동선택) {
+			case 1:
+				System.out.printf("%s가 %s에게 공격\n", 영웅.이름, 나타난몬스터.이름);
+				영웅.공격(나타난몬스터);
+				break;
+			case 2:
+				System.out.printf("%s가 %s에게 특수공격\n", 영웅.이름, 나타난몬스터.이름);
+				영웅.특수공격(나타난몬스터);
+				break;
+			default:
+				System.out.printf("%s가 도망쳤다.\n", 영웅.이름);
+				진행 = false;
+			}
+			
+			if(나타난몬스터.체력<=0) {
+				나타난몬스터.죽기();
+				System.out.printf("%s의 승리!", 영웅.이름);
+				진행 = false;
+			}
+			if (진행==false) break;
+			
+			나타난몬스터.공격(영웅);
+			if(영웅.체력<=0) {
+				영웅.죽기();
+				System.out.printf("%s의 승리..", 나타난몬스터.이름);
+				진행 = false;
+			}
+		}
+	}
+}
